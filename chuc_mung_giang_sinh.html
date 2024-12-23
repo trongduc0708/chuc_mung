@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas, My Love!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<script>
+    document.body.addEventListener('click', function () {
+        startMusic(); 
+    });
+
+    function startMusic() {
+        const backgroundMusic = document.getElementById('background-music');
+        if (backgroundMusic.paused) {
+            backgroundMusic.play().catch(function (error) {
+                console.error("Phát nhạc thất bại:", error);
+            });
+        }
+    }
+</script>
+<body>
+    <!-- Snowflakes -->
+    <div id="snowflakes"></div>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop>
+        <source src="audios/Boney-M-Jingle-Bells-(JustNaija.com).mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <h1>Nhập ngày chúng ta yêu nhau ❤️ em nhé</h1>
+            <input type="date" id="loveDate" />
+            <button onclick="checkLoveDate()">Vào</button>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container" style="display: none;">
+        <h1>Merry Christmas, My Love! 🎄❤️</h1>
+        <nav>
+            <a href="#" onclick="showSection('gallery')">Thư viện ảnh</a>
+            <a href="#" onclick="showSection('music')">Nghe nhạc</a>
+            <a href="#" onclick="showSection('message')">Thông điệp</a>
+        </nav>
+
+        <section id="gallery">
+            <h2>Thư viện ảnh</h2>
+            <div class="gallery-container">
+                <img src="image/z6157984278855_304aec6217e41a49b2404331b2dad25b.jpg" alt="Ảnh 1">
+                <img src="image/z6157984303945_a9957c6693e9374d458b551fcbbb9b72.jpg" alt="Ảnh 2">
+                <img src="image/z6157984316502_6464666631c3bbb8a7d5602eff7720c8.jpg" alt="Ảnh 3">
+                <img src="image/z6157990348429_fbc2e4e1358aab7fbf246efd7452c2d3.jpg" alt="Ảnh 3">
+                <img src="image/z6157990352911_1aff90d372d86352eb7e275e5a43ea02.jpg" alt="Ảnh 3">
+            </div>
+        </section>
+
+        <section id="music">
+            <h2>Nghe nhạc</h2>
+            <ul class="music-list">
+                <li onclick="playMusic('audios/ConMuaTinhYeu-HaAnhTuanPhuongLi_3uj37.mp3')">Cơn Mưa Tình Yêu</li>
+                <li onclick="playMusic('audios/NamTayAnhNhe-DongNhiOngCaoThang-2480049.mp3')">Nắm Tay Anh Nhé</li>
+                <li onclick="playMusic('audios/YeuLaPhaiNoiTinhYeuSuuNhiSuuNhiOst-BaHungPapyxuTuong-4587561.mp3')">Yêu Là Phải Nói</li>
+            </ul>
+            <audio class="music-player" controls></audio>
+        </section>
+
+        <section id="message">
+            <h2>Thông điệp</h2>
+            <p>Chúc tình yêu của anh một Giáng sinh vui vẻ và ấm áp nhất! ❤️🎄</p>
+            <p>Đây là mùa giáng sinh đầu tiên của anh và em, tính tới hôm nay chúc ta đã đi cùng nhau được 1 chặng đường tuy chưa thể dài như bao người, chưa dài lâu như những cặp đôi khác. Nhưng chúng ta đã cùng nhau vượt qua cùng nhau ngồi lại để hiểu nhau hơn. Anh không biết nói gì hơn khi em đã đến để cuộc sống này của anh có thêm màu sắc, trên chặng đường này còn rất nhiều khó khăn trắc trở hơn nữa. Vậy nên a hy vọng là đôi ta cùng nắm tay nhau để vượt qua nhé, kết thúc của ngày tháng yêu nhau bằng một lễ vu quy và ở đó a là chú rể còn em là cô dâu nhé và lại cùng nhau tiếp bước tới một hành trang sau đó nữa tới khi đầu bạc em nhé. Anh biết mình có nhiều khuyết điểm nên anh sẽ cố gắng khắc phục ạ.</p>
+            <p>Cảm ơn em vì đã đến bên anh, làm cuộc sống của anh trở nên rực rỡ và trọn vẹn hơn từng ngày. Mỗi nụ cười của em giống như ngọn nến lung linh, xua tan mọi giá lạnh trong lòng anh.</p>
+            <p>Anh chỉ mong mùa Giáng Sinh năm nay và cả những mùa sau nữa, anh luôn được nắm tay em, cùng nhau bước qua từng khoảnh khắc yêu thương. Dù ngoài kia thế giới có rộng lớn thế nào, chỉ cần có em, anh đã thấy đủ đầy và bình yên. </p>
+            <p>Chúc em một mùa Giáng Sinh an lành, hạnh phúc và luôn rạng rỡ như em đã làm với cuộc đời anh. Yêu em, mãi mãi! ❤️🎄</p>
+        </section>
+    </div>
+
+    <script>
+        // Function to start background music after user interaction
+        function startMusic() {
+            const backgroundMusic = document.getElementById('background-music');
+            if (backgroundMusic.paused) {
+                backgroundMusic.play();
+            }
+        }
+
+        // Function to play selected music and stop the background music
+        function playMusic(file) {
+            const backgroundMusic = document.getElementById('background-music');
+            const musicPlayer = document.querySelector('.music-player');
+
+            // Pause the background music and reset it
+            backgroundMusic.pause();
+            backgroundMusic.currentTime = 0;
+
+            // Set new music source and play it
+            musicPlayer.src = file;
+            musicPlayer.play();
+        }
+
+        // Check if the date is correct to open the main container
+        function checkLoveDate() {
+            const loveDate = document.getElementById('loveDate').value;
+            const correctDate = '2022-12-24'; // Replace with your specific date
+            if (loveDate === correctDate) {
+                document.getElementById('loginModal').style.display = 'none';
+                document.querySelector('.container').style.display = 'block';
+                startMusic(); // Start background music after successful date entry
+            } else {
+                alert('Sai ngày rồi! ❤️');
+            }
+        }
+
+        // Function to show the selected section
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+        }
+
+        // Snowflakes Effect
+        function createSnowflakes() {
+            const snowflakes = document.getElementById('snowflakes');
+            for (let i = 0; i < 100; i++) {
+                const flake = document.createElement('div');
+                flake.className = 'snowflake';
+                flake.textContent = '❄';
+                flake.style.left = Math.random() * window.innerWidth + 'px';
+                flake.style.animationDuration = 3 + Math.random() * 5 + 's';
+                flake.style.animationDelay = Math.random() * 5 + 's';
+                flake.style.fontSize = 10 + Math.random() * 20 + 'px';
+                snowflakes.appendChild(flake);
+            }
+        }
+
+        createSnowflakes();
+    </script>
+</body>
+</html>
